@@ -1,12 +1,10 @@
 import { useRecoilState } from "recoil";
 import { todoListState, filterState } from "../store/index";
-import TodoItem from "../components/todoItem"
+import TodoItem from "./todoItem"
 
 const TodoList = () => {
 
     const [todoList, setTodoList] = useRecoilState(todoListState);
-    // const [filterCompleted, setFilterCompleted] = useState(false);
-    // const [filter, setFilter] = useState("all"); 
     const [filter, setFilter] = useRecoilState(filterState);
 
 
@@ -15,18 +13,6 @@ const TodoList = () => {
         newList.splice(index, 0, newList.splice(item.currentIndex, 1)[0]);
         setTodoList(newList);
     };
-
-
-
-    //     return (
-    //         <div className="mt-8">
-    //             {todoList.map((todo, index) => (
-    //                 <TodoItem key={index} index={index} todo={todo} handleDrop={handleDrop} />
-    //             ))}
-    //         </div>
-    //     );
-    // };
-
 
     const filteredTasks = todoList.filter((todo) => {
         if (filter === "all") return true;

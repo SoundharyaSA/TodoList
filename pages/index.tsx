@@ -1,5 +1,5 @@
-import TodoList from "./components/todoList";
-import TodoInput from "./components/todoInput";
+import TodoList from "../components/todoList";
+import TodoInput from "../components/todoInput";
 import { DndProvider } from 'react-dnd';
 import { RecoilRoot } from "recoil";
 import { HTML5Backend } from 'react-dnd-html5-backend';
